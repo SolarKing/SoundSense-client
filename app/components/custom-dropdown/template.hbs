@@ -1,0 +1,17 @@
+<span class="custom-dropdown-wrapper">
+  <span class="selection" {{action "toggleDropdown"}}>
+    {{selection}}
+    {{#if isDropdownShowing}}
+      <div class="custom-dropdown-items">
+        {{#each options as |option|}}
+          <div class="custom-dropdown-item" {{action "setSelection" option.item}}>
+            {{option.item}}
+          </div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </span>
+  {{#if isDropdownShowing }}
+    <div class="custom-dropdown-overlay" {{action "toggleDropdown"}}></div>
+  {{/if}}
+</span>

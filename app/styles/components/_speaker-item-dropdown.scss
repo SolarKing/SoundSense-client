@@ -1,0 +1,75 @@
+.header-menu {
+  height: 50px;
+  border-bottom: thin solid gray;
+  text-align: right;
+  line-height:50px;
+  font-weight: 300;
+  span {
+    font-size: 20px;
+    padding: 0px 15px;
+    border: thin solid gray;
+    border-radius: 5px;
+    margin: 0 10px;
+  }
+}
+
+.speaker-volume-control {
+  padding: 15px;
+  height: 100px;
+  i {
+    float: left;
+    font-size: 24px;
+  }
+  h3 {
+    font-weight: 300;
+    text-align: center;
+  }
+}
+
+.speaker-options {
+  height: 50px;
+  button {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: none;
+    float: left;
+    background: none;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    &:first-child {
+      border-right: thin solid gray;
+    }
+  }
+}
+
+.speaker-item-wrapper {
+  width: 100%;
+  border-bottom: $secondaryColor thin solid;
+}
+
+.speaker-item {
+  width: 100%;
+  min-height: 90px;
+  border-bottom: $secondaryColor thin solid;
+}
+
+.speaker-item-logo {
+  font-size: 32px;
+  float: left;
+  padding: 30px;
+  box-sizing: border-box;
+  width: 90px;
+  height: 90px;
+}
+
+.speaker-item-name {
+  font-size: 36px;
+  float: left;
+  padding-top: 28px;
+  box-sizing: border-box;
+  font-weight: 300;
+}

@@ -1,0 +1,105 @@
+
+<nav class="settingsNavMenu">
+  {{#link-to "speakers" tagName="button" class="prevRoute"}}Back{{/link-to}}
+  <div class="settingsNavTitle">
+    Settings
+  </div>
+</nav>
+<main class="settingsMain">
+  <div class="presets">
+    <div class="presets-wrapper">
+      <button type="button" name="button">Default</button>
+      <button type="button" name="button">Party</button>
+      <button type="button" name="button">Chill</button>
+      <button type="button" name="button">Study</button>
+      <button type="button" name="button">Annoy</button>
+    </div>
+  </div>
+  <div class="dynamicVolume">
+    <span class="dynamicVolumeLabel">Dynamic Volume</span>
+    <div class="dynamicVolumeToggle">{{x-toggle theme='default' toggle='toggleDynamicVolume'}}</div>
+
+  </div>
+  {{#unless isDynamic}}
+  <form class="dynamicBehavior">
+    <p>
+      As the sound level
+      <span class="soundLevel">
+        {{custom-dropdown options=soundLevelOpts tagName="span"}}
+      </span>
+      ,
+    </p>
+    <p>
+      volume
+
+      <span class="volumeLevel">
+        {{custom-dropdown options=volumeLevelOpts tagName="span"}}
+      </span>
+      .
+    </p>
+
+
+  </form>
+
+  <div class="volumeRangeName">
+    Volume Range
+  </div>
+
+  <div class="volumeRangeSlider">
+
+    <i class="fa fa-volume-off"></i>
+
+    <div class="range-slider-wrapper">{{range-slider
+     value=volumeRange
+     min=0
+     max=50
+     step=1
+     orientation='horizontal'
+     tooltip='hide'
+     disabled=false
+     handle='round'
+     selection='before'
+     mood="info"
+     tooltipPosition='bottom' }}</div>
+
+
+     <i class="fa fa-volume-up"></i>
+  </div>
+  <button type="button" name="button" {{action "getData"}}>Get Data</button>
+  <button type="button" name="button" {{action "changeVolume"}}>Change Volume</button>
+
+  {{else}}
+  <div class="volumeRangeName">
+    Volume Level
+  </div>
+
+  <div class="volumeRangeSlider">
+
+    <i class="fa fa-volume-off"></i>
+
+    <div class="range-slider-wrapper">{{ui-slider
+     value=volume
+     min=0
+     max=50
+     step=1
+     orientation='horizontal'
+     tooltip='hide'
+     disabled=false
+     handle='round'
+     selection='before'
+     mood="info"
+     tooltipPosition='bottom' }}</div>
+
+
+     <i class="fa fa-volume-up"></i>
+  </div>
+  <button class="resetButton" type="button" name="button">
+    Reset
+  </button>
+  <div style="height: 1px">
+
+  </div>
+  {{/unless}}
+
+
+</main>

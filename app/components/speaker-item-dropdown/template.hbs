@@ -1,0 +1,48 @@
+<div class="header-menu">
+  <div class="add-device-button">
+    add device <span>+</span>
+  </div>
+</div>
+<div class="speaker-item-wrapper">
+  <div class="speaker-item" {{action "showDropdown"}}>
+    <div class="speaker-item-logo">
+      <i class="fa fa-cube"></i>
+    </div>
+    <div class="speaker-item-name">
+      Speaker
+    </div>
+  </div>
+  {{#if isDropped}}
+    <div class="speaker-item-dropdown">
+
+      <div class="speaker-volume-control">
+        <h3>Volume</h3>
+        <i class="fa fa-volume-off"></i>
+
+        <div class="range-slider-wrapper">
+          {{ui-slider
+         value=volume
+         min=0
+         max=50
+         step=1
+         orientation='horizontal'
+         tooltip='hide'
+         disabled=false
+         handle='round'
+         selection='before'
+         mood="info"
+         tooltipPosition='bottom' }}
+       </div>
+
+
+         <i class="fa fa-volume-up"></i>
+      </div>
+      <div class="speaker-options">
+        <button type="button" name="button" {{action "mute"}}>Mute</button>
+        {{#link-to 'settings' tagName="button"}}Settings{{/link-to}}
+        <button type="button" name="button"></button>
+      </div>
+
+    </div>
+  {{/if}}
+</div>
